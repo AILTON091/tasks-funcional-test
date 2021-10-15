@@ -32,9 +32,24 @@
 	          <version>3.0.0-M3</version>
                 <configuration>
                 <testFailureIgnore>true</testFailureIgnore>
+                <skipTests>${skip.surefire.tests}</skipTests>>
                 <shutdown>kill</shutdown> <!-- Use it if required-->
                 </configuration>
 	        </plugin>
+	        <plugin>
+	          <groupId>org.apache.maven.plugins</groupId>
+	          <artifactId>maven-failsafe-plugin</artifactId>
+	          <version>2.18.1</version>
+                <executions>
+	                <execution>
+	                	<goals>
+	                		<goal>integration-test</goal>
+	                		<goal>verify</goal>
+	                	</goals>
+	                </execution>
+                </executions>
+	        </plugin>
+	
 	   </plugins>
   </build>
 </project>
